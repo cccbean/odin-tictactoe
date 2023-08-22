@@ -7,10 +7,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <div class="wrapper">
+    <div class="header">
+      <h2>Tic Tac Toe</h2>
+      <button id="new-game">New Game</button>
+      <div class="options">
+        <div>
+          <label for="player1">Player 1 (X):</label>
+          <input type="text" name="player1" id="player1" autocomplete="off">
+        </div>
 
+        <div>
+          <label for="player2">Player 2 (O):</label>
+          <input type="text" name="player2" id="player2" autocomplete="off">
+        </div>
 
+        <div><button id="start">Start</button></div>
+      </div>
+    </div>
+    <div class="game">
+      <div class="game-text"></div>
+      <div class="gameboard">
 
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

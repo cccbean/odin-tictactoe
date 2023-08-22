@@ -1,0 +1,120 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* MEYER RESET */
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url('./font/roboto-regular-webfont.woff2') format('woff2'),
+       url('./font/roboto-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body {
+  font-family: "robotoregular";
+  font-size: max(16px, 1rem);
+}
+
+button, input {
+  font: inherit;
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template: min-content 1fr / 1fr;
+}
+
+.header {
+  background-color: lightblue;
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+  place-items: center;
+}
+
+h2, .game-text {
+  font-size: 2rem;
+}
+
+.options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  background-color: pink;
+  display: grid;
+  grid-template: min-content 1fr / 1fr;
+}
+
+.game-text {
+  background-color: lightcoral;
+  padding: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.game-text:empty {
+  padding: 0px;
+}
+
+.gameboard {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.gameboard button {
+  display: grid;
+  place-items: center;
+}

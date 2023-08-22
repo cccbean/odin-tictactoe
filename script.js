@@ -41,8 +41,9 @@ const gameboard = (() => {
         let index = thisBut.dataset.index;
         let marker = game.checkTurn().marker;
         let hasWon = game.checkWin.rows() || game.checkWin.cols() || game.checkWin.diags();
+        let arrFul = gameboard.gameboardArr.filter(element => element !== "").length === 9;
 
-        if (hasWon === false) {
+        if (hasWon === false && !arrFul) {
           displayController.updateMarker(thisBut, marker);
           gameboard.gameboardArr[index] = marker;
           game.incrementTurn();
@@ -52,6 +53,11 @@ const gameboard = (() => {
           if (hasWon === true) {
             let name = game.checkTurn().name === players.player1.name ? players.player2.name : players.player1.name;
             displayController.displayWinner(name);
+          }
+
+          let arrFul = gameboard.gameboardArr.filter(element => element !== "").length === 9;
+          if (arrFul) {
+            displayController.displayTie();
           }
         }
       })
@@ -109,7 +115,11 @@ const displayController = (() => {
     gameTextDiv.textContent = `${winnerName} has won!!!`
   }
 
-  return {updateTurn, updateMarker, displayWinner};
+  const displayTie = () => {
+    gameTextDiv.textContent = "It's a tie..."
+  }
+
+  return {updateTurn, updateMarker, displayWinner, displayTie};
 })();
 
 const game = (() => {
